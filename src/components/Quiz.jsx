@@ -8,10 +8,10 @@ import "../styles/quiz.scss";
 const Quiz = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [isClickable, setIsClickable] = useState(false); // Şıkların tıklanabilirliği
+  const [isClickable, setIsClickable] = useState(false); 
   const [answers, setAnswers] = useState([]);
   const [timeRemaining, setTimeRemaining] = useState(30);
-  const [selectedAnswer, setSelectedAnswer] = useState(null || "No answer"); // Seçilen cevabı kaydetmek için
+  const [selectedAnswer, setSelectedAnswer] = useState(null || "No answer"); 
 
   const navigate = useNavigate();
 
@@ -29,24 +29,21 @@ const Quiz = () => {
       return;
     }
 
-    // Şıkları 10 saniye sonra aktif yapacak timer
     const clickTimer = setTimeout(() => {
       setIsClickable(true);
     }, 10000);
 
-    // Zamanlayıcı ve otomatik geçiş ayarları
     const timer = setTimeout(() => {
       setCurrentQuestionIndex((prev) => prev + 1);
       setTimeRemaining(30);
       setSelectedAnswer(null);
-      setIsClickable(false); // Şıkları tekrar devre dışı bırak
+      setIsClickable(false); 
     }, 30000);
 
     const countdown = setInterval(() => {
       setTimeRemaining((prev) => prev - 1);
     }, 1000);
 
-    // Temizleme fonksiyonları
     return () => {
       clearTimeout(timer);
       clearTimeout(clickTimer);
@@ -61,7 +58,7 @@ const Quiz = () => {
 
   const handleAnswer = (choice) => {
     if (isClickable) {
-      setSelectedAnswer(choice); // Seçilen cevabı kaydet
+      setSelectedAnswer(choice); 
       setAnswers((prev) => {
         const updatedAnswers = [...prev];
         updatedAnswers[currentQuestionIndex] = {
@@ -91,7 +88,7 @@ const Quiz = () => {
                 key={index}
                 variant="outlined"
                 onClick={() => handleAnswer(choice)}
-                disabled={!isClickable} // İlk 10 saniye boyunca butonlar deaktif olacak
+                disabled={!isClickable} 
               >
                 {letterChoices[index]}-{choice}
               </Button>

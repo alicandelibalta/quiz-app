@@ -10,7 +10,7 @@ function Welcome () {
 
     const handleClick = () => {
         navigate("/quiz")
-      };
+      }; 
 
     return(
         <>
