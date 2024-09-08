@@ -1,0 +1,60 @@
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  --color-success: #41f1b6;
+  --color-warning: #ff5555;
+  --color-info-dark: #7d8da1;
+
+  --color-text-primary: #000000;
+  --color-text-light: #fbfbf9;
+
+  --color-component-background-primary: #f8f7f4;
+  --color-component-background-blue: #81b8ef;
+  --color-component-background-yellow: #dbbe29;
+  --color-component-background-gray: #737373;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  appearance: none;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+html {
+  font-size: 18px;
+  background-color: var(--color-component-background-primary);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "RobotoSerif" !important;
+  word-spacing: 0.1em;
+  line-height: 1.2;
+  font-size: 18px;
+  user-select: none;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 26px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 22px;
+}
+h4 {
+  font-size: 18px;
+}
+
+@font-face {
+  font-family: "RobotoSerif";
+  src: url("../fonts/roboto-serif/RobotoSerif-VariableFont_GRAD\,opsz\,wdth\,wght.ttf");
+}

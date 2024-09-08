@@ -1,0 +1,42 @@
+.question-container {
+    width: 1000px;
+    height: 520px;
+
+    margin: 5% auto;
+    padding: 1%;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1); 
+    border-radius: 2%;
+}
+
+.question-title {
+    margin: 1%;
+}
+
+.question-choices {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        margin: 2%;
+
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #0056b3; // Hover durumu için renk
+            color: var(--color-white);
+        }
+
+        &:active {
+            background-color: #003d80; // Tıklama sonrası renk
+        }
+
+        &:focus {
+            outline: none;
+            background-color: #004080; // Odaklanıldığında renk
+        }
+    }
+}
